@@ -51,18 +51,27 @@ class MyStack
     StackNode top;
     
     //Function to push an integer into the stack.
-    ArrayList<Integer> al = new ArrayList<>();
+    // ArrayList<Integer> al = new ArrayList<>();
     void push(int a) 
     {
         // Add your code here
-        al.add(a);
+        StackNode node = new StackNode(a);
+        if(top == null) top = node;
+        else {
+            node.next = top;
+            top = node;
+        }
     }
     
     //Function to remove an item from top of the stack.
     int pop() 
     {
         // Add your code here
-        if(al.size() == 0) return -1;
-        else return al.remove(al.size() - 1);
+        if(top == null) return -1;
+        else{
+            int val = top.data;
+            top = top.next;
+            return val;
+        }
     }
 }
