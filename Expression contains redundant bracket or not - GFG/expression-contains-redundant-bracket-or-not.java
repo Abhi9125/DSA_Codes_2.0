@@ -35,15 +35,15 @@ class Solution {
             int count = 0;
             
             if(ch != ')'){
-                stk.push(ch);
+                stk.push(ch); 
             }else {
                 // if(stk.size() > 1){
                     while(stk.peek() != '('){
                      stk.pop();
                      count++;
                     }
-                    if(count <= 1) return 1;
-                    stk.pop();
+                    if(count <= 1) return 1; // for redundant.
+                    stk.pop(); // for po '('.
                 // }
             }
         }
