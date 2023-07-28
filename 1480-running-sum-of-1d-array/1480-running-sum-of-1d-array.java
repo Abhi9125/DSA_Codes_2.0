@@ -16,9 +16,18 @@ class Solution {
         
 //         Without extra space and O(n)
         
-        for(int i = 1; i <  nums.length; i++){
-            nums[i] = nums[i-1] + nums[i];
+        // for(int i = 1; i <  nums.length; i++){
+        //     nums[i] = nums[i-1] + nums[i];
+        // }
+        // return nums;
+        
+//         by prefix sum
+        int prefix[] = new int[nums.length];
+        
+        for(int i = 0; i < prefix.length; i++){
+            prefix[i] = nums[i] + ((i > 0) ? prefix[i - 1] : 0);
         }
-        return nums;
+        return prefix;
     }
+    
 }
