@@ -1,5 +1,6 @@
 class Solution {
     
+//     Binary Serch
     public int firstPosition(int arr[], int target){
         int lo = 0, hi = arr.length- 1;
         int idx = -1;
@@ -8,7 +9,7 @@ class Solution {
             
             if(target == arr[mid]){
                idx = mid;
-                hi = mid - 1;
+                hi = mid - 1;  // for batter first occurance 
             }else if(target > arr[mid]) lo = mid + 1;
             else if(target < arr[mid]) hi = mid - 1;
         }
@@ -23,7 +24,7 @@ class Solution {
             
             if(target == arr[mid]){
                idx = mid;
-                lo = mid + 1;
+                lo = mid + 1;  // for batter right occurance
             }else if(target > arr[mid]) lo = mid + 1;
             else if(target < arr[mid]) hi = mid - 1;
         }
